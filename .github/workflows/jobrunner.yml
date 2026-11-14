@@ -2,7 +2,7 @@ name: First job running
 on: push
 
 jobs:
-  test:
+  lint:
     runs-on: ubuntu-latest
     steps:
         - name: Check code
@@ -19,3 +19,4 @@ jobs:
 
         - name: Run linter
           run: npm run lint
+            
