@@ -1,5 +1,7 @@
 name: Output event Details on 'issues'
-on: issues
+on:
+  push:
+  issues:
 jobs:
   info:
     runs-on: ubuntu-latest
