@@ -1,7 +1,8 @@
 name: Output event Details on 'issues'
 on:
-  push:
-  issues:
+  workflow_run:
+    workflows: ["First job runing"]
+    types: [completed]
 jobs:
   info:
     runs-on: ubuntu-latest
