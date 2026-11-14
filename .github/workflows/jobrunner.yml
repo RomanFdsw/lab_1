@@ -1,0 +1,19 @@
+name: First job running 
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Run linter 
+          uses: action/checkout@v4
+
+        - name: Set up node js
+          uses: actions/setup-node@v4
+          with: 
+            node-version: '20'
+            cache: 'npm'
+        - name: Install all dependencies
+          run: ci 
+        
+        - name: Run linter
+          run: npm run lint
