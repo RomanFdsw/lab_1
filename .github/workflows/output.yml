@@ -1,16 +1,11 @@
-name: Output event Details on 'issues'
-on:
-  workflow_run:
-    workflows: ["First job runing"]
-    types: [completed]
+name: Handle issues
+on: issues
 jobs:
-  info:
+  output-info:
     runs-on: ubuntu-latest
     steps:
-        - name: Output issues
-          env:
-           EVENT_JSON: "${{toJSON(github.event)}}"
-          run: echo "$EVENT_JSON" 
+      - name: Output event details
+        run: echo "${{ toJSON(github.event) }}"
 
 
            
